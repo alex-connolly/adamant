@@ -1,0 +1,34 @@
+package adamant @ 0.0.1
+
+contract AdamantWillService {
+
+    wills [Will]
+
+    class Will {
+
+        owner address
+        bequeathments [Bequeathment]
+        executor address
+
+        Bequeath(b Bequeathment){
+            require(call.caller == owner)
+            this.bequeathments = append(this.bequeathments, b)
+        }
+
+        SetExecutor(e address){
+            this.executor = e
+        }
+    }
+
+    class Bequeathment {
+
+        from, to    address
+        value       address
+
+        constructor(){
+            from = call.call
+        }
+
+    }
+
+}

@@ -1,0 +1,10 @@
+package adamant @ 0.0.1
+
+contract AdamantContractService {
+
+    class Contract {
+        owner address
+        signer address
+    }
+
+}
